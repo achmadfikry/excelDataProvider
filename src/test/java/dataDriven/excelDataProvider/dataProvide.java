@@ -42,8 +42,14 @@ public class dataProvide {
         int colcount = row.getLastCellNum();
 
         //iterate every arrow & throw / create into one array
-        Object data[][] = new Object[rowCount - 1][colcount];
+        Object data[][] = new Object[rowCount-1][colcount];
 
+        for (int i = 0; i < rowCount; i++) {
+            row = sheet.getRow(i+1);
+            for (int j = 0; j < colcount; j++) {
+                row.getCell(j);
+            }
+        }
 
         return data;
     }
